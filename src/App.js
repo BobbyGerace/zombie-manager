@@ -20,9 +20,9 @@ function App() {
 }
 
 function ZombieManager(props) {
-    let [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-    let zombieRows = state.zombies
+    const zombieRows = state.zombies
         .filter(z => z.location === state.location)
         .map(z => <Zombie zombie={z} dispatch={dispatch} key={z.id} location={state.location} />);
 
